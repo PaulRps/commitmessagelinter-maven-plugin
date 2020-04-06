@@ -1,9 +1,9 @@
 # commitmessagelinter-maven-plugin
 
-# Simple Example
+# Example
 
-## With Basic Configuration
-Add that in your POM.xml file:
+## Basic Configuration
+First, Add that in your POM.xml file:
 ```xml
 <build>
     <plugins>
@@ -22,7 +22,7 @@ Add that in your POM.xml file:
 </build>
 ```
 
-Install the hook commit message file by running the maven goal install-hook:
+Then, install the hook commit message file by running the maven goal install-hook:
 ```bash
 mvn com.paulrps:commitmessagelinter-maven-plugin:install-hook
 ```
