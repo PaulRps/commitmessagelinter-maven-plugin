@@ -12,7 +12,7 @@ public class HookFileContentHandler {
       "#!/bin/bash\n"
           + "file=$1\n"
           + "message=`cat $file`\n"
-          + "mvn %s:%s:%s -DcommitMessage=\"${message}\"\n";
+          + "mvn %s:%s:%s:validate-message -DcommitMessage=\"${message}\"\n";
 
   public static String getContent() throws IOException {
 
