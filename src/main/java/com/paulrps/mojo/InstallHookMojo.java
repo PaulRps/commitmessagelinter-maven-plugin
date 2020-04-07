@@ -27,6 +27,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Optional;
 
 /**
@@ -49,17 +50,24 @@ public class InstallHookMojo extends CustomAbstractMojo {
     String baseDir = parameters.getProject().getBasedir().getAbsolutePath();
     log.info(MessagesEnum.INFO_PROJECT_BASE_DIR.getFormatedMessage(baseDir));
 
-    final String target = String.format("%s/.git/hooks/commit-msg", baseDir);
+    final String gitFolder = Paths.get(baseDir, ".git").toString();
+    if (!new File(gitFolder).exists()) {
+      log.info(MessagesEnum.INFO_GIT_FOLDER_NOT_FOUND.getFormatedMessage(gitFolder));
+      return;
+    }
+
+    final String target = Paths.get(gitFolder, "hooks", "commit-msg").toString();
     log.info(MessagesEnum.INFO_TARGET_GIT_FILE.getFormatedMessage(target));
 
     final File file = new File(target);
+
     FileWriter fw = null;
     BufferedWriter bw = null;
     try (FileWriter fileWriter = new FileWriter(file)) {
       fileWriter.write(HookFileContentHandler.getContent());
     } catch (final IOException ex) {
       log.error(ex);
-      throw new CustomMojoExecutionException(MessagesEnum.ERROR_INSTALL_HOOK_FILE);
+      throw new CustomMojoExecutionException(MessagesEnum.ERROR_INSTALL_HOOK_FILE, target);
     } finally {
       try {
         fw.close();

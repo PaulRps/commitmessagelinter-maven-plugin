@@ -15,7 +15,8 @@ public enum MessagesEnum {
   INFO_TARGET_GIT_FILE("INFO02", "Target git file: %s"),
   INFO_DISABLED_VALIDATION(
       "INFO03", "Message validation is disabled. See your plugin configuration in pom file!"),
-  INFO_END_VALIDATION("INFO04", "Validation message executed: %s");
+  INFO_END_VALIDATION("INFO04", "Validation message executed: %s"),
+  INFO_GIT_FOLDER_NOT_FOUND("INFO05", "Skipping project, git Folder not found: %s");
 
   private MessagesEnum(final String code, final String message) {
     this.code = code;

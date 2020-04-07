@@ -3,7 +3,7 @@
 # Example
 
 ## Basic Configuration
-First, Add that in your POM.xml file:
+First, Add that in your root POM.xml file:
 ```xml
 <build>
     <plugins>
@@ -21,10 +21,11 @@ First, Add that in your POM.xml file:
     </plugins>
 </build>
 ```
-
+If there is more than one .git folder in the project base directory (for example submodules), every commit in all of them will be validated.
+ 
 Then, install the hook commit message file by running the maven goal install-hook:
 ```bash
 mvn com.paulrps:commitmessagelinter-maven-plugin:install-hook
 ```
 
-So, when you execute git commit -m "message", this will be validated for configuration.regex parameter in your POM.xml file.
+So, when you execute git commit -m "message", this will be validated by configuration.regex parameter in your POM.xml file.
