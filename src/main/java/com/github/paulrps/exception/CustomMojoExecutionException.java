@@ -1,6 +1,6 @@
-package com.paulrps.exception;
+package com.github.paulrps.exception;
 
-import com.paulrps.model.MessagesEnum;
+import com.github.paulrps.model.MessagesEnum;
 import org.apache.maven.plugin.MojoExecutionException;
 
 public class CustomMojoExecutionException extends MojoExecutionException {

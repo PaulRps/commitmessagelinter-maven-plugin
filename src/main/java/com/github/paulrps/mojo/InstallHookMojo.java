@@ -1,25 +1,9 @@
-package com.paulrps.mojo;
+package com.github.paulrps.mojo;
 
-/*
- * Copyright 2001-2005 The Apache Software Foundation.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import com.paulrps.exception.CustomMojoExecutionException;
-import com.paulrps.model.MessagesEnum;
-import com.paulrps.model.MojoParameter;
-import com.paulrps.util.HookFileContentHandler;
+import com.github.paulrps.exception.CustomMojoExecutionException;
+import com.github.paulrps.model.MessagesEnum;
+import com.github.paulrps.model.MojoParameter;
+import com.github.paulrps.util.HookFileContentHandler;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.plugins.annotations.Mojo;
 
@@ -31,13 +15,10 @@ import java.nio.file.Paths;
 import java.util.Optional;
 
 /**
- * Goal which touches a timestamp file.
+ * Goal which install the hook file commit-msg in .git/hooks.
  *
- * @goal touch
- * @phase process-sources
+ * @author PaulRps
  */
-// @NoArgsConstructor
-// @Data
 @Mojo(name = "install-hook")
 public class InstallHookMojo extends CustomAbstractMojo {
 
@@ -72,7 +53,7 @@ public class InstallHookMojo extends CustomAbstractMojo {
       try {
         fw.close();
         bw.close();
-      } catch (Throwable t) {
+      } catch (Exception t) {
         //        ignore
       }
     }

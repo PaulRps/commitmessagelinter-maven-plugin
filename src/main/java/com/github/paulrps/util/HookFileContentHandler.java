@@ -1,4 +1,4 @@
-package com.paulrps.util;
+package com.github.paulrps.util;
 
 import lombok.Builder;
 
@@ -7,6 +7,8 @@ import java.util.Properties;
 
 @Builder
 public class HookFileContentHandler {
+
+  private HookFileContentHandler(){}
 
   private static final String CONTENT =
       "#!/bin/bash\n"

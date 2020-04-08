@@ -1,4 +1,4 @@
-package com.paulrps.model;
+package com.github.paulrps.model;
 
 
 import lombok.Builder;

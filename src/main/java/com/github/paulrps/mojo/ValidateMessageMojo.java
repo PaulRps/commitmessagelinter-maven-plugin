@@ -1,8 +1,8 @@
-package com.paulrps.mojo;
+package com.github.paulrps.mojo;
 
-import com.paulrps.exception.CustomMojoExecutionException;
-import com.paulrps.model.MessagesEnum;
-import com.paulrps.model.MojoParameter;
+import com.github.paulrps.exception.CustomMojoExecutionException;
+import com.github.paulrps.model.MessagesEnum;
+import com.github.paulrps.model.MojoParameter;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -11,6 +11,12 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+/**
+ * Goal which validates the git commit message.
+ *
+ * @author PaulRps
+ */
 @Mojo(name = "validate-message", defaultPhase = LifecyclePhase.VALIDATE)
 public class ValidateMessageMojo extends CustomAbstractMojo {
 

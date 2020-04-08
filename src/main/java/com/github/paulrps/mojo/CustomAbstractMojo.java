@@ -1,16 +1,39 @@
-package com.paulrps.mojo;
+package com.github.paulrps.mojo;
 
-import com.paulrps.exception.CustomMojoExecutionException;
-import com.paulrps.model.MojoParameter;
+import com.github.paulrps.exception.CustomMojoExecutionException;
+import com.github.paulrps.model.MojoParameter;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 public abstract class CustomAbstractMojo extends AbstractMojo {
 
+  /**
+   * Maven project ${project} that you put your root pom file.
+   *
+   * @parameter
+   */
   @Parameter private MavenProject project;
+
+  /**
+   * Commit message that is get from command installed in .git/hooks/commit-msg file.
+   *
+   * @parameter
+   */
   @Parameter private String commitMessage;
+
+  /**
+   * Regex pattern you want to use to validate the commit message.
+   *
+   * @parameter
+   */
   @Parameter private String regex;
+
+  /**
+   * Flag that you can disable the commit message validation.
+   *
+   * @parameter
+   */
   @Parameter private boolean disableValidationMessage;
 
   public void execute() throws CustomMojoExecutionException {

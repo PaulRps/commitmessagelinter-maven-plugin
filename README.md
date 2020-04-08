@@ -8,7 +8,7 @@ First, Add that in your root POM.xml file:
 <build>
     <plugins>
         <plugin>
-            <groupId>com.paulrps</groupId>
+            <groupId>com.github.paulrps</groupId>
             <artifactId>commitmessagelinter-maven-plugin</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <configuration>
