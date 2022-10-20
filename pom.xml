@@ -6,7 +6,7 @@
     <packaging>maven-plugin</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>commitmessagelinter-maven-plugin Maven Mojo</name>
-    <description>A Maven plugin to validate git commit message</description>
+    <description>A Maven plugin to hook and validate git commit message</description>
     <url>http://maven.apache.org</url>
 
     <organization>
